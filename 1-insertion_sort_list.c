@@ -7,7 +7,7 @@
   */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = NULL,*curr_prev = NULL, *temp = NULL;
+	listint_t *current = NULL, *curr_prev = NULL, *temp = NULL;
 
 	if (!list || !*list || (*list)->next == NULL)
 	{	_error("Empty list: nothing to sort");
@@ -31,7 +31,7 @@ void insertion_sort_list(listint_t **list)
 				current->prev->next = current;
 			else/* update head to pointer */
 				*list = current;
-			print_list (*list);
+			print_list(*list);
 		}
 		temp = temp->next;
 	}
