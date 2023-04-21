@@ -9,7 +9,7 @@ void insertion_sort_list(listint_t **list)
 {
 	listint_t *current = NULL, *curr_prev = NULL, *temp = NULL;
 
-	if (!list || !*list || (*list)->next == NULL)
+	if (!list || !*list || ((*list)->next == NULL))
 	{	_error("Empty list: nothing to sort");
 		return;
 	}
