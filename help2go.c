@@ -10,7 +10,7 @@ void _error(char *str)
 
 	for (index = 0; str[index] != '\0'; index++)
 	{
-		write(STDERR_FILENO, &str[index]; 1);
+		write(STDERR_FILENO, &str[index], 1);
 	}
 	write(STDERR_FILENO, "\n", 1);
 }
@@ -37,5 +37,5 @@ void _puts(char *str)
 			b_oput++;
 		}
 	}
-	write(STDERR_FILENO, '\n', 1);
+	write(STDERR_FILENO, "\n", 1);
 }

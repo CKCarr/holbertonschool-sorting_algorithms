@@ -4,6 +4,7 @@
 /* GLOBAL LIBRARIES */
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 /* STRUCTURES */
 /**
@@ -29,7 +30,6 @@ void bubble_sort(int *array, size_t size);
 
 /* found in file: 1-insertion_sort_list.c */
 void insertion_sort_list(listint_t **list);
-
 /* found in file: 2-selection_sort.c */
 void selection_sort(int *array, size_t size);
 
