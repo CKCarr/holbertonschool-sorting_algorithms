@@ -37,6 +37,9 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
 
+/* found in file: help2go.c */
+void _puts(char *str);
+void _error(char *str);
 
 
 #endif /*SORT_H*/
