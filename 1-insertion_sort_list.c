@@ -7,30 +7,33 @@
   */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = NULL, *curr_prev = NULL, *temp = NULL;
+	listint_t *node1 = NULL, *node2 = NULL, *temp = NULL;
 
-	if (!list || !*list || ((*list)->next == NULL))
-	{	_error("Empty list: nothing to sort");
-		return;
-	}
+	if (!list || !(*list) || (!(*list)->next))
+	{	return;	}
 	temp = *list;
-	while (temp)
+	while (temp->next)
 	{
-		while ((temp->prev) && (temp->n < temp->prev->n))
-		{	curr_prev = temp->prev;
-			current = temp;
-
-			curr_prev->next = current->next;
-			if (current->next)
-				current->next->prev = curr_prev;
-			current->next = curr_prev;
-			current->prev = curr_prev->prev;
-			curr_prev->prev = current;
-			if (current->prev)
-				current->prev->next = current;
-			else/* update head to pointer */
-				*list = current;
+		while (temp->n > temp->next->n)
+		{	node1 = temp;
+			node2 = temp->next;
+			node2->prev = node1->prev;
+			if (node1->prev)
+				node1->prev->next = node2;
+			else
+				*list = node2;
+			if (node2->next)
+				node2->next->prev = node1;
+			node1->prev = node2;
+			node1->next = node2->next;
+			node2->next = node1;
+			temp = temp->prev;
 			print_list(*list);
+			if (temp->prev && temp->prev->n > temp->n)
+			{
+				temp = temp->prev;
+				continue;
+			}
 		}
 		temp = temp->next;
 	}

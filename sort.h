@@ -2,10 +2,8 @@
 #define SORT_H
 
 /* GLOBAL LIBRARIES */
-#include <stdlib.h>
+#include <stddef.h>
 #include <stdio.h>
-#include <unistd.h>
-
 /* STRUCTURES */
 /**
  * struct listint_s - Doubly linked list node
@@ -36,10 +34,6 @@ void selection_sort(int *array, size_t size);
 /* found in file: 3-quick_sort.c */
 void quick_sort(int *array, size_t size);
 
-
-/* found in file: help2go.c */
-void _puts(char *str);
-void _error(char *str);
 
 
 #endif /*SORT_H*/
