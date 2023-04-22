@@ -33,7 +33,8 @@ void selection_sort(int *array, size_t size);
 
 /* found in file: 3-quick_sort.c */
 void quick_sort(int *array, size_t size);
-
-
+void swap_int(int *curr_idx, int *nxt_idx);
+size_t part_like_lomuto(int *array, size_t size, int lo, int hi);
+void sort_like_lomuto(int *array, size_t size, int left, int right);
 
 #endif /*SORT_H*/
