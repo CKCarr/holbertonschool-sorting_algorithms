@@ -17,8 +17,8 @@ void swap_int(int *cur_idx, int *nxt_idx)
 /**
   * part_like_lomuto - partition an array using lomuto scheme.
   * @array: array to partition.
-  * @lo: lower index of partitiion.
-  * @hi: higher index of partition.
+  * @left: start index of partitiion.
+  * @right: end index of partition.
   * @size: size of the array.
   * Return: index of pivot.
   */
@@ -26,7 +26,7 @@ size_t part_like_lomuto(int *array, size_t size, int left, int right)
 {
 	int hi, lo, *pivot = array + right;
 
-	for ( hi = lo = left; lo <  right; lo++)
+	for (hi = lo = left; lo <  right; lo++)
 	{
 		if (array[lo] < *pivot)
 		{
@@ -78,5 +78,5 @@ void quick_sort(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
-	sort_like_lomuto(array, size, 0, size -1);
+	sort_like_lomuto(array, size, 0, size - 1);
 }
